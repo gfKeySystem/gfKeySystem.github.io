@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/res.png">
+    <link rel="icon" href="./res.png">
 
     <!-- 카카오톡 출력용 -->
     <meta property="og:url" content="https://gfkeysytstem.github.io/">
@@ -28,39 +28,164 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     
+    <style>
+      .container{
+        margin-top: 100px;
+      }
+      .mt10{ margin-top: 10px; }
+      .mt30{ margin-top: 30px; }
+      #bingo{
+        width: 320px;
+        height: 320px;
+        margin: auto;
+      }
+      #bingo td{
+        padding: 0;
+      }
+      .ary{
+        width: 100%;
+        height: 100%;
+        background: black!important;
+      }
+      .ary:checked:after{
+        background: orange!important;
+      }
+    </style>
+
   </head>
 
   <body>
-
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Fixed navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
+      <a class="navbar-brand" href="/">소녀전선 키이벤트 확률 계산기</a>
     </nav>
 
     <div class="container">
+      <div class="alert alert-danger" role="alert">
+        주의! 확정해독은 마지막에 모든 빈 칸을 채울 수 있을 때 쓰세요.
+      </div>
       <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
-        <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs »</a>
+        <h1></h1>
+        <p class="lead">
+          <img class="img-fluid" src="./740x236.jpg">
+          <ol>
+            <li>현재 자신의 빙고판을 터치로 입력한다</li>
+            <li>숫자는 달라도 상관없습니다. 모양만 같으면 됩니다.</li>
+            <li>시작!을 누른다.</li>
+          </ol>
+        </p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+          이 프로그램에 대해서
+        </button>
+      </div>
+
+      <div class="col-12">
+        <table class="table table-inverse table-bordered text-center" id="bingo">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td><input type="checkbox" class="ary d-1"></td>
+              <td><input type="checkbox" class="ary d-2"></td>
+              <td><input type="checkbox" class="ary d-3"></td>
+              <td><input type="checkbox" class="ary d-4"></td>
+              <td><input type="checkbox" class="ary d-5"></td>
+              <td><input type="checkbox" class="ary d-6"></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td><input type="checkbox" class="ary d-7"></td>
+              <td><input type="checkbox" class="ary d-8"></td>
+              <td><input type="checkbox" class="ary d-9"></td>
+              <td><input type="checkbox" class="ary d-10"></td>
+              <td><input type="checkbox" class="ary d-11"></td>
+              <td><input type="checkbox" class="ary d-12"></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td><input type="checkbox" class="ary d-13"></td>
+              <td><input type="checkbox" class="ary d-14"></td>
+              <td><input type="checkbox" class="ary d-15"></td>
+              <td><input type="checkbox" class="ary d-16"></td>
+              <td><input type="checkbox" class="ary d-17"></td>
+              <td><input type="checkbox" class="ary d-18"></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td><input type="checkbox" class="ary d-19"></td>
+              <td><input type="checkbox" class="ary d-20"></td>
+              <td><input type="checkbox" class="ary d-21"></td>
+              <td><input type="checkbox" class="ary d-22"></td>
+              <td><input type="checkbox" class="ary d-23"></td>
+              <td><input type="checkbox" class="ary d-24"></td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td><input type="checkbox" class="ary d-25"></td>
+              <td><input type="checkbox" class="ary d-26"></td>
+              <td><input type="checkbox" class="ary d-27"></td>
+              <td><input type="checkbox" class="ary d-28"></td>
+              <td><input type="checkbox" class="ary d-29"></td>
+              <td><input type="checkbox" class="ary d-30"></td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td><input type="checkbox" class="ary d-31"></td>
+              <td><input type="checkbox" class="ary d-32"></td>
+              <td><input type="checkbox" class="ary d-33"></td>
+              <td><input type="checkbox" class="ary d-34"></td>
+              <td><input type="checkbox" class="ary d-35"></td>
+              <td><input type="checkbox" class="ary d-36"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xs-12 col-sm-8 ml-sm-auto mr-sm-auto mt30">
+        <button id="run" type="button" class="btn btn-primary btn-lg btn-block">시작!</button>
+
+        <!-- Params -->
+        <div class="input-group mt10">
+          <span class="input-group-addon" id="basic-addon1">시행횟수</span>
+          <input type="number" class="form-control" id="p_n" placeholder="10000" aria-label="Username" aria-describedby="basic-addon1" value="10000">
+        </div>
+        <div class="input-group mt10" style="display: none;">
+          <span class="input-group-addon" id="basic-addon1">결과 출력 주기</span>
+          <input type="number" class="form-control" id="p_show" placeholder="10000" aria-label="Username" aria-describedby="basic-addon1" value="100">
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">이 프로그램에 대해서</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              앞으로 빙고가 어떻게 진행될지 n번 임의로 시행해봅니다<br>
+              자세한 설명은 생략한다(<a href="https://ko.wikipedia.org/wiki/%EB%AA%AC%ED%85%8C%EC%B9%B4%EB%A5%BC%EB%A1%9C_%EB%B0%A9%EB%B2%95">몬테카를로 시뮬레이션</a>)
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -71,4 +196,11 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <script>
+      $("#run").on( "click", function() {
+        console.log( $( this ).text() );
+      });
+    </script>
+
 </body></html>
