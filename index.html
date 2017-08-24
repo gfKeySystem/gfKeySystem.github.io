@@ -166,7 +166,11 @@
         </div>
         <div class="input-group mt10">
           <span class="input-group-addon" id="basic-addon1">하루 해독 횟수</span>
-          <input type="number" class="form-control" id="p-ticket" placeholder="9" aria-label="Username" aria-describedby="basic-addon1" value="9">
+          <input type="number" class="form-control" id="p-ticket" placeholder="9" aria-label="Username" aria-describedby="basic-addon1" value="5">
+        </div>
+        <div class="input-group mt10">
+          <span class="input-group-addon" id="basic-addon1">현재 중복 포인트</span>
+          <input type="number" class="form-control" id="p-d" placeholder="300" aria-label="Username" aria-describedby="basic-addon1" value="300">
         </div>
         <div class="input-group mt10">
           <span class="input-group-addon" id="basic-addon1">시행 횟수</span>
@@ -239,8 +243,11 @@
         var ticket = $("#p-ticket")[0].value
         var n = $("#p-n")[0].value
         var show = $("#p-show")[0].value
+        var d = $("#p-d")[0].value / 10
         var sum = 0
         var loser = 0
+        var sum_d = 0
+        var dp = 0
 
         // run
         for(t = 1; t <= n; t++){
@@ -255,12 +262,14 @@
             if(ary[i] == 1) cnt++
             ary[i] = 0
           }
+          fail = fail + d
           if(cnt < 36 && (fail / 10) < (36 - cnt)) loser++
           sum += cnt
+          sum_d += fail
 
           // print
           if(t % show == 0){
-            $("#res").prepend('<div class="alert alert-primary" role="alert">' + t + '번 수행<br>평균 빈칸 수 : ' + sum / t + '<br>14빙고 실패 확률 : ' + loser / t + '</div>')
+            $("#res").prepend('<div class="alert alert-primary" role="alert">' + t + '번 수행<br>평균 빈칸 수 : ' + sum / t + '<br>14빙고 실패 확률 : ' + loser / t + '<br>앞으로 흭득하게 될 중복 포인트의 평균 : ' + ((sum_d) / t) * 10 + '</div>')
           }
         }
         
