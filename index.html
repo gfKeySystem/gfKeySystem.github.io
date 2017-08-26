@@ -230,13 +230,6 @@
     <script>
       $("#run").on( "click", function() {
         console.log( $( this ).text() )
-        
-        // get array
-        var ary = new Array(37)
-        for(i = 1; i <= 36; i++) { ary[i] = 0 }
-        $(".ary:checkbox:checked").each(function(){
-          ary[this.value] = 1
-        })
 
         // get params
         var day = $("#p-day")[0].value
@@ -252,15 +245,19 @@
         // run
         for(t = 1; t <= n; t++){
           var fail = 0
+          var cnt = 0
+          var ary = new Array(37)
+          for(i = 1; i <= 36; i++) { ary[i] = 0 }
+          $(".ary:checkbox:checked").each(function(){
+            ary[this.value] = 1
+            cnt++
+          })
           for(i = 1; i <= day * ticket; i++){
+            if(cnt >= 36) break
             var tmp = Math.floor((Math.random() * 36) + 1)
             if(ary[tmp] == 1){ fail++ }
+            else { cnt ++ }
             ary[tmp] = 1
-          }
-          var cnt = 0
-          for(i = 1; i <= 36; i++){
-            if(ary[i] == 1) cnt++
-            ary[i] = 0
           }
           fail = fail + d
           if(cnt < 36 && (fail / 10) < (36 - cnt)) loser++
